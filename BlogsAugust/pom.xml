@@ -7,7 +7,7 @@
 	<groupId>com.aug.blogs</groupId>
 	<artifactId>BlogsAugust</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>pom</packaging>
+	<packaging>war</packaging>
 
 	<name>BlogsAugust Maven Webapp</name>
 	<!-- FIXME change it to the project's website -->
