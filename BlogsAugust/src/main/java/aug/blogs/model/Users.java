@@ -75,5 +75,12 @@ public class Users implements Serializable {
 	public void setStatus(boolean status) {
 		this.status = status;
 	}
+
+	@Override
+	public String toString() {
+		return "Users [id=" + id + ", userName=" + userName + ", password="
+				+ password + ", email=" + email + ", displayName="
+				+ displayName + ", status=" + status + "]";
+	}
 	
 }

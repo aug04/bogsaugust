@@ -1,3 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-DATA: ${model.message}, ${model.title}, ${model.user}
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set var="user" value="${model.user}"/>
+DATA: ${model.message}, ${model.title}, ${user.displayName}

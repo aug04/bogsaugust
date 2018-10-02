@@ -23,20 +23,4 @@
 		<property name="order" value="2" />
 	</bean>
 	
-	<context:property-placeholder location="classpath:config/jdbc/datasource.properties"/>
-	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" lazy-init="default" autowire="default">
-		<property name="driverClassName" value="${base.jdbc.driver}"/>
-	    <property name="url" value="${base.jdbc.url}"/>
-	    <property name="username" value="${base.jdbc.username}"/>
-	    <property name="password" value="${base.jdbc.password}"/>
-	</bean>
-	
-	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="classpath:config/jdbc/mybatis-config.xml"/>
-      	<property name="dataSource" ref="dataSource" />
-	</bean>
-	
-	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage" value="aug.blogs.mapper"/>
-	</bean>
 </beans>

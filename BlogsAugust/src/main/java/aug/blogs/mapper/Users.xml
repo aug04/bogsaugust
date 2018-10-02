@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="aug.blogs.dao.UsersService">
+<mapper namespace="aug.blogs.dao.UsersMapper">
 
-	<select id="get" parameterType="int" resultType="Users">
+	<resultMap type="Users" id="UsersResult">
+		<id property="id" column="id"/>
+		<result property="userName" column="user_name"/>
+		<result property="password" column="password"/>
+		<result property="email" column="email"/>
+		<result property="displayName" column="display_name"/>
+		<result property="status" column="status"/>
+	</resultMap>
+
+	<select id="get" parameterType="int" resultMap="UsersResult">
 		select * from users where id = #{id}
 	</select>
 
