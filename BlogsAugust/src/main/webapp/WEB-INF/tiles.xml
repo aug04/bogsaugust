@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 2.1//EN" "http://tiles.apache.org/dtds/tiles-config_2_1.dtd">
+<tiles-definitions>
+	<definition name="baseLayout" template="/WEB-INF/view/layout/baseLayout.jsp">
+		<put-attribute name="menu" value="/WEB-INF/view/layout/menu.jsp"/>
+		<put-attribute name="header" value="/WEB-INF/view/layout/header.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/layout/body.jsp"/>
+		<put-attribute name="footer" value="/WEB-INF/view/layout/footer.jsp"/>
+	</definition>
+	
+	<!-- sub -->
+	<definition name="*" extends="baseLayout">
+		<put-attribute name="title" value="Please replace the title!"/>
+		<put-attribute name="body" value="{1}.jsp"/>
+	</definition>
+	
+	<definition name="*/*" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/view/{1}/{2}.jsp"/>
+	</definition>
+	
+	<definition name="*/*/*" extends="baseLayout">
+		<put-attribute name="body" value="/WEB-INF/view/{1}/{2}/{3}.jsp"/>
+	</definition>
+</tiles-definitions>
