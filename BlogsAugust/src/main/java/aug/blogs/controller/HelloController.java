@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import aug.blogs.dao.UsersService;
+import aug.blogs.dao.UserServiceImpl;
 import aug.blogs.model.Users;
 
 @Controller("helloController")
@@ -20,7 +20,7 @@ import aug.blogs.model.Users;
 public class HelloController {
 
 	@Autowired
-	private UsersService _userService;
+	private UserServiceImpl _userService;
 	
 	@RequestMapping("/01/{id}")
 	public ModelAndView doHello(HttpServletRequest req, HttpServletResponse resp, @PathVariable("id") int id) {
