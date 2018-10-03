@@ -8,10 +8,19 @@
 		<put-attribute name="footer" value="/WEB-INF/view/layout/footer.jsp"/>
 	</definition>
 	
+	<!-- common (login) -->
+	<definition name="common/auth/*" template="/WEB-INF/view/layout/loginLayout.jsp">
+		<put-attribute name="html" value="/WEB-INF/view/common/auth/{1}.jsp" />
+	</definition>
+	
+	<!-- admin -->
+	<definition name="admin/*" extends="adminBaseLayout">
+		<put-attribute name="body" value="/WEB-INF/view/admin/{1}.jsp"/>
+	</definition>
+	
 	<!-- sub -->
 	<definition name="*" extends="baseLayout">
-		<put-attribute name="title" value="Please replace the title!"/>
-		<put-attribute name="body" value="{1}.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/{1}.jsp"/>
 	</definition>
 	
 	<definition name="*/*" extends="baseLayout">
