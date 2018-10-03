@@ -8,13 +8,14 @@
 <title></title>
 </head>
 <body>
+admin page
 	<!-- TODO: check session and redirect to login page -->
-	<c:if test="${sessionScope['user'] eq null}">
+	<%-- <c:if test="${sessionScope['user'] eq null}">
 		<c:set var="redirectUrl" value="${pageContext.request.contextPath }/common/auth/login"/>
 		<script type="text/javascript">
 			window.location.href = '${redirectUrl}';
 		</script>
-	</c:if>
+	</c:if> --%>
 	<!-- redirect to dashboard -->
 </body>
 </html>
