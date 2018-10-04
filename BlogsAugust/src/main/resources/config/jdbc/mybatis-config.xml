@@ -4,7 +4,7 @@
     "http://mybatis.org/dtd/mybatis-3-config.dtd">
 
 <configuration>
-	<properties resource="config/jdbc/datasource.properties" />
+	<!-- <properties resource="config/jdbc/datasource.properties" /> -->
 	<settings>
 		<setting name="cacheEnabled" value="true" />
 		<setting name="lazyLoadingEnabled" value="true" />
@@ -29,7 +29,7 @@
 		<typeAlias alias="Terms" type="aug.blogs.model.Terms" />
 		<typeAlias alias="Users" type="aug.blogs.model.Users" />
 	</typeAliases>
-	<environments default="development">
+	<!-- <environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
@@ -47,5 +47,5 @@
 		<mapper resource="aug/blogs/mapper/TermTaxonomy.xml" />
 		<mapper resource="aug/blogs/mapper/Terms.xml" />
 		<mapper resource="aug/blogs/mapper/Users.xml" />
-	</mappers>
+	</mappers> -->
 </configuration>

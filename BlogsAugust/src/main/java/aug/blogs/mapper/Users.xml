@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="aug.blogs.dao.UsersMapper">
+<mapper namespace="aug.blogs.dao.UsersService">
 
 	<resultMap type="Users" id="UsersResult">
 		<id property="id" column="id"/>
@@ -12,7 +12,16 @@
 	</resultMap>
 
 	<select id="get" parameterType="int" resultMap="UsersResult">
-		select * from users where id = #{id}
+		SELECT * FROM users WHERE id = #{id}
 	</select>
+	
+	<select id="getAllUsers" resultMap="UsersResult">
+		SELECT * FROM users
+	</select>
+	
+	<insert id="insertUsers" parameterType="Users" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO users (user_name, password, email, display_name, status)
+		VALUES (#{userName}, #{password}, #{email}, #{displayName}, #{status})
+	</insert>
 
 </mapper>

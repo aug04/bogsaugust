@@ -1,29 +1,35 @@
 package aug.blogs.dao;
 
-import org.apache.ibatis.session.SqlSession;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import aug.blogs.model.Users;
-import aug.blogs.util.MyBatisUtil;
 
 @Service
 public class UsersService {
+	
+	@Autowired
+	private UsersDAOImpl _userDAOImpl;
 	
 	public UsersService() {
 		
 	}
 
-	public Users get(int id) {
-		SqlSession session = MyBatisUtil.getSqlSessionFactory().openSession();
-		try {
-			UsersMapper userService = session.getMapper(UsersMapper.class);
-			return userService.get(id);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			session.close();
-		}
+	public Users get(int id) throws Exception {
+
+		return (Users) _userDAOImpl.object("get", id);
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<Users> getAllUsers() throws Exception {
+
+		return (List<Users>) _userDAOImpl.list("getAllUsers");
+	}
+	
+	public int insertUsers(Users user) throws Exception {
 		
-		return null;
+		return (int) _userDAOImpl.insert("insertUsers", user);
 	}
 }
